@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+
+:root {
+  --charcoal: hsl(203, 9%, 28%);
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
+
+  --on-background: hsl(225, 7%, 89%);
+  --black: hsl(0, 0%, 0%);
+  --surface-variant: var(--charcoal);
+  --radius-pill: 100px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #ccc3c3;
+  font-weight: bold;
+}
+
+a:hover {
+  color: rgba(249, 211, 180, 1);
+}
+
+img {
+  height: auto;
+}
+
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+input {
+  width: 100%;
+}
+
+button,
+li {
+  cursor: pointer;
+}
+
+a,
+img,
+span,
+data,
+input,
+button,
+li,
+i {
+  display: block;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-roboto);
+  background-color: var(--black);
+  font-size: 1.8rem;
+  color: var(--on-background);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+body.modalActive {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: var(--radius-pill);
+}
+
+body:hover::-webkit-scrollbar-thumb {
+  background-color: var(--surface-variant);
+}
+
+.app {
+  padding: 1rem 2rem;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(249, 211, 180, 1);
+  background: #1f2123;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  font-size: 1.5rem;
+  font-family: var(--font-raleway);
+  font-weight: 400;
+  padding-right: 1rem;
+
+  outline: none;
+  color: #a1a1a1;
+  background: #1f2123;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #a1a1a1;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px #1f2123;
+  caret-color: #a1a1a1;
+}
+
+.input-group img {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.search {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  padding: 2rem 0 1rem;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 2rem;
+}
+
+.user-card {
+  width: 100%;
+  min-height: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(20, 20, 20, 1);
+  box-shadow: 5px 5px 5px  #1f2123;
+}
+
+.user-card.btn {
+  cursor: pointer;
+}
+
+.title {
+  min-width: 100px;
+}
+
+.text {
+  color: rgba(249, 211, 180, 1);
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-block: 8px;
+
+}
+
+.middle-section {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+
+.bottom-section {
+  font-size: 1rem;
+  padding-block: 1rem;
+}
+
+.bottom-section .text {
+  padding-block: .7rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.user-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.user-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.user-list {
+  display: flex;
+  justify-content: center;
+  align-self: "center";
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  padding: 20px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .user-card {
+    width: 45%;
+
+  }
+
+  .user-card.full {
+    width: 55%;
+
+  }
+
+  .input-group input {
+    font-size: 1.75rem;
+  }
+
+  .input-group img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+}
+
+
+@media screen and (min-width: 1024px) {
+  .user-card {
+    width: 30%;
+    font-size: 2rem;
+
+  }
+
+  .user-card.full {
+    width: 40%;
+    font-size: 2rem;
+  }
+
+}
