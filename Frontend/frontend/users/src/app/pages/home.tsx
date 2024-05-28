@@ -22,9 +22,7 @@ const Homepage = () => {
   const getData = async (searchQuery: string) => {
     try {
       const response = await fetch(
-        `http://localhost:3000?term=${
-          searchQuery && encodeURIComponent(searchQuery)
-        }`
+        `http://localhost:3000?term=${encodeURIComponent(searchQuery)}`
       );
       const data = await response.json();
       setSearchData(data);
@@ -58,21 +56,22 @@ const Homepage = () => {
         <SearchBar onSearch={handleSearch} />
       </div>
       <div className="user-section">
-        {isReady && (searchData.length === 0 ? (
-          <h1 className="text" style={{ textAlign: "center", fontSize: 20 }}>
-            No Results Found
-          </h1>
-        ) : (
-          <div className="user-list">
-            {searchData.map((userData, index) => (
-              <UserCard
-                key={index}
-                userData={userData}
-                onHandleShowUser={handleShowUser}
-              />
-            ))}
-          </div>
-        ))}
+        {isReady &&
+          (searchData.length === 0 ? (
+            <h1 className="text" style={{ textAlign: "center", fontSize: 20 }}>
+              No Results Found
+            </h1>
+          ) : (
+            <div className="user-list">
+              {searchData.map((userData, index) => (
+                <UserCard
+                  key={index}
+                  userData={userData}
+                  onHandleShowUser={handleShowUser}
+                />
+              ))}
+            </div>
+          ))}
       </div>
       {showOverlay && (
         <UserCardFull userData={userData} handleShowOvelay={handleShowOvelay} />
